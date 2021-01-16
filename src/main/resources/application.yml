@@ -1,17 +1,16 @@
 spring:
   datasource:
-  url: jdbc:h2:tcp://localhost/~/jpashop;MVCC=TRUE
-  username: sa
-  password:
-  driver-class-name: org.h2.Driver #데이터베이스 커넥션 설정
+    url: jdbc:h2:tcp://localhost/~/jpashop
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
 
   jpa:
     hibernate:
-      ddl-auto: create # 자동셋팅 엔티티정보를 보고 다시 지웠다 설치
-  properties:
-    hibernate:
-      #show_sql: true sysytem out으로 출력 sql문
-      format_sql: true
-#log 레벨 정함
-logging.level:
-  org.hibernate.SQL: debug #하이버네이트나 jpa가 생성하는 sql이 보임
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+logging:
+  level:
+    org.hibernate.SQL: debug
