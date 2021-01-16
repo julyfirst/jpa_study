@@ -2,27 +2,37 @@ package jpabook.jpashop.repository;
 
 
 import jpabook.jpashop.domain.Member;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import java.util.List;
 
 // DAO랑 비슷
 @Repository
+@RequiredArgsConstructor
 public class MemberRepository {
 
-    // 스프링부트가 엔티티매니저 주입을 해줌
-    @PersistenceContext
-    private EntityManager em;
+    private final EntityManager em;
 
-    public Long save(Member member) {
+    public void save(Member member) {
         em.persist(member);
-        return member.getId();
     }
 
-     public Member find(Long id) {
+    public Member findOne(Long id) {
+        // type, pk 넣어주기
         return em.find(Member.class, id);
-     }
+    }
 
+    public List<Member> findAll() {
+        return em.createQuery("select m from Member m", Member.class)
+                .getResultList();
+    }
+
+    public List<Member> findByName(String name) {
+        return em.createQuery("select m from Member m where m.name = :name", Member.class)
+                .setParameter("name", name)
+                .getResultList();
+    }
 
 }

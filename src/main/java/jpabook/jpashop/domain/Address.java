@@ -13,5 +13,14 @@ public class Address {
     private String street;
     private String zipcode;
 
+    protected Address() {
 
+    }
+
+    // 생성할 때만 값이 정해지고
+    public Address(String city, String street, String zipcode) {
+        this.city = city;
+        this.street = street;
+        this.zipcode = zipcode;
+    }
 }

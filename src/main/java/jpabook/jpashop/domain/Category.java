@@ -26,11 +26,18 @@ public class Category {
     private List<Item> items = new ArrayList<>();
 
     // 내부모니까 타입을 넣어주고
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id")
     private Category parent;
 
     // 자식은 카테고리를 여러개 가질 수 있음
     @OneToMany(mappedBy = "parent")
     private List<Category> child = new ArrayList<>();
+
+    // 연관관계 메서드
+    public void addChildCategory(Category child) {
+        this.child.add(child);
+        child.setParent(this);
+    }
+
 }
