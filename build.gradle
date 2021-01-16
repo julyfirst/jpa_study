@@ -1,5 +1,5 @@
 plugins {
-	id 'org.springframework.boot' version '2.4.2'
+	id 'org.springframework.boot' version '2.4.2' // 스프링부트 버전
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 }
@@ -7,7 +7,7 @@ plugins {
 group = 'jpabook'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
-
+// lombok setting
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
@@ -17,7 +17,7 @@ configurations {
 repositories {
 	mavenCentral()
 }
-
+// 디펜던시(의존관계), jpa, thymeleaf 등등...
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
