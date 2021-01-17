@@ -5,7 +5,6 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-ㅑ
 @Entity
 @Data
 public class Member {
@@ -13,7 +12,7 @@ public class Member {
     @Id
     @GeneratedValue
     @Column(name = "member_id")
-    private long id;
+    private Long id;
 
     private String name;
 
