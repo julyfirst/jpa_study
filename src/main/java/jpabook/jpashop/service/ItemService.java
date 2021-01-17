@@ -14,11 +14,11 @@ import java.util.List;
 public class ItemService {
 
     private final ItemRepository itemRepository;
-
     @Transactional
-    public void setItem(Item item) {
+    public void saveItem(Item item) {
         itemRepository.save(item);
     }
+
     public List<Item> findItems() {
         return itemRepository.findAll();
     }

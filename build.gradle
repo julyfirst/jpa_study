@@ -24,6 +24,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-devtools'
 	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.6' // 운영하고 배포할 떄는 한번 고민 해봐야함 병목이 발생 할 수 있음
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	testCompile group: 'junit', name: 'junit', version: '4.13.1'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
