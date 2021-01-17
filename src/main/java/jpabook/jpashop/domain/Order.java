@@ -37,7 +37,7 @@ public class Order {
     private Delivery delivery;
 
     // 주문시간
-    private LocalDateTime orderDateTime;
+    private LocalDateTime orderDate;
 
     // 주문상태 [ORDER, CANCEL]
     @Enumerated(EnumType.STRING) // 반드시 이걸로 선언해야함
@@ -68,7 +68,7 @@ public class Order {
             order.addOrderItem(orderItem);
         }
         order.setStatus(OrderStatus.ORDER);
-        order.setOrderDateTime(LocalDateTime.now());
+        order.setOrderDate(LocalDateTime.now());
         return order;
     }
 
