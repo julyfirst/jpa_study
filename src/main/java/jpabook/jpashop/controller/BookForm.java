@@ -9,8 +9,8 @@ public class BookForm {
 
     private Long id;
     private String name;
-    private int price;
-    private int stockQuantity;
+    private Long price;
+    private Long stockQuantity;
 
     private String author;
     private String isbn;
